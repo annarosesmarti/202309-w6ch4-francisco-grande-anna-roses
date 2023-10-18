@@ -2,8 +2,8 @@ abstract class Component {
   private readonly element: Element;
 
   constructor(
-    private readonly parentElement: Element,
     private readonly tagName: string,
+    private readonly parentElement: Element,
     private readonly className: string,
   ) {
     this.parentElement = parentElement;
