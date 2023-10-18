@@ -1,4 +1,4 @@
-import type CharacterData from "../Types/CharacterData";
+import type { CharacterData } from "../type/type";
 
 class Character {
   isAlive: boolean;
@@ -8,7 +8,7 @@ class Character {
     this.characterData = characterData;
   }
 
-  communicate() {
+  communicate(): string {
     return `${this.characterData.name} says: `;
   }
 
