@@ -1,29 +1,25 @@
 import Character from "../Character/Character";
 import { Fighter } from "../Fighter/Fighter";
-import type CharacterData from "../Types/CharacterData";
+import type { SquireData } from "../type/type";
 
 export class Squire extends Character {
-  kissAssLeve: number;
-  serves: string;
+  kissAssLevel;
+  serves;
 
-  constructor(
-    characterData: CharacterData,
-    kissAssLevel: number,
-    serves: string,
-  ) {
-    super(characterData);
+  constructor(data: SquireData, kissAssLevel: number) {
+    super(data);
     this.kissAssLevel = this.kissAssLevelFilter(kissAssLevel);
 
-    if (serves instanceof Fighter) {
-      this.serves = serves;
+    if (data.serves instanceof Fighter) {
+      this.serves = data.serves;
     }
   }
 
-  communicate() {
+  communicate(): string {
     return `${super.communicate()}I'm a loser`;
   }
 
-  private kissAssLevelFilter(kissAssLevel: number) {
+  private kissAssLevelFilter(kissAssLevel: number): number {
     if (kissAssLevel < 0) {
       return 0;
     }
