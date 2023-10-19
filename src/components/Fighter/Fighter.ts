@@ -1,5 +1,5 @@
 import Character from "../Character/Character";
-import type { FighterData } from "../type/type";
+import type { FighterData } from "../../types";
 
 export class Fighter extends Character {
   weapon;
