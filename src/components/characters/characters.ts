@@ -1,4 +1,4 @@
-import { Fighter } from "../Fighter/Fighter";
+import Fighter from "../Fighter/Fighter";
 import { King } from "../King/King";
 import { type KingData } from "../../types";
 import { type FighterData } from "../../types";

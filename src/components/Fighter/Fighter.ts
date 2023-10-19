@@ -1,7 +1,7 @@
 import Character from "../Character/Character";
 import type { FighterData } from "../../types";
 
-export class Fighter extends Character {
+class Fighter extends Character {
   weapon;
   dexterity;
 
@@ -11,19 +11,24 @@ export class Fighter extends Character {
     this.dexterity = data;
   }
 
-  communicate(): string {
+  protected communicate(): string {
     return `${super.communicate()}First I hit and then I ask`;
   }
 
-  private filterDexterity(dexterity: number) {
-    if (dexterity < 0) {
-      return 0;
+  protected filterDexterity(dexterity: number): number {
+    const minNumber = 0;
+    const maxNumber = 10;
+
+    if (dexterity < minNumber) {
+      return minNumber;
     }
 
-    if (dexterity > 10) {
-      return 10;
+    if (dexterity > maxNumber) {
+      return maxNumber;
     }
 
     return dexterity;
   }
 }
+
+export default Fighter;

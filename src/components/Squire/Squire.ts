@@ -1,25 +1,26 @@
 import Character from "../Character/Character";
-import { Fighter } from "../Fighter/Fighter";
 import type { SquireData } from "../../types";
+import Fighter from "../Fighter/Fighter";
 
 export class Squire extends Character {
   kissAssLevel;
   serves;
 
-  constructor(data: SquireData, kissAssLevel: number) {
+  constructor(data: SquireData) {
     super(data);
-    this.kissAssLevel = this.kissAssLevelFilter(kissAssLevel);
+    this.kissAssLevel = this.kissAssLevelFilter(data.kissAssLevel);
+    this.serves = data.serves;
 
     if (data.serves instanceof Fighter) {
       this.serves = data.serves;
     }
   }
 
-  communicate(): string {
+  protected communicate(): string {
     return `${super.communicate()}I'm a loser`;
   }
 
-  private kissAssLevelFilter(kissAssLevel: number): number {
+  protected kissAssLevelFilter(kissAssLevel: number): number {
     if (kissAssLevel < 0) {
       return 0;
     }
@@ -31,3 +32,5 @@ export class Squire extends Character {
     return kissAssLevel;
   }
 }
+
+export default Squire;
