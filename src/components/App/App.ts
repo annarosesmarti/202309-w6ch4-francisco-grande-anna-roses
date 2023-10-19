@@ -1,21 +1,21 @@
-abstract class Component {
-  private readonly element: Element;
+class App {
+  protected element: Element;
+  private readonly parentElement: Element;
 
-  constructor(
-    private readonly tagName: string,
-    private readonly parentElement: Element,
-    private readonly className: string,
-  ) {
-    this.parentElement = parentElement;
+  constructor(parentElement: Element, tagName: string, className: string) {
     this.element = document.createElement(tagName);
     this.element.className = className;
+    this.parentElement = parentElement;
   }
 
-  public render(): void {
+  render(): void {
     this.parentElement.appendChild(this.element);
+    this.populate();
   }
 
-  abstract populate(): void;
+  protected populate(): void {
+    this.element.textContent = "";
+  }
 }
 
-export default Component;
+export default App;
