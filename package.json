@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "public/js/index.js",
+  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "build": "tsc",
