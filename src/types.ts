@@ -1,4 +1,4 @@
-import { type Fighter } from "./components/Fighter/Fighter";
+import type Fighter from "./components/Fighter/Fighter";
 import type Character from "./components/Character/Character";
 
 export interface CharacterData {
