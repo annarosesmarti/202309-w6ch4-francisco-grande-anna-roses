@@ -1,4 +1,4 @@
-import type { CharacterData } from "../type/type";
+import { type CharacterData } from "../../types";
 
 class Character {
   isAlive: boolean;

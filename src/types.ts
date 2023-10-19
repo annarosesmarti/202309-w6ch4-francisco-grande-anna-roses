@@ -1,5 +1,5 @@
-import { type Fighter } from "../Fighter/Fighter";
-import type Character from "../Character/Character";
+import { type Fighter } from "./components/Fighter/Fighter";
+import type Character from "./components/Character/Character";
 
 export interface CharacterData {
   name: string;
@@ -17,7 +17,7 @@ export interface FighterData extends CharacterData {
   dexterity: number;
 }
 
-export interface AdviserData extends CharacterData {
+export interface AdvisorData extends CharacterData {
   adviseCharacter: Character;
 }
 

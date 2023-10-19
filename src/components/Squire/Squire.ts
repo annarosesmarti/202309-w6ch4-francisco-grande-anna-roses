@@ -1,6 +1,6 @@
 import Character from "../Character/Character";
 import { Fighter } from "../Fighter/Fighter";
-import type { SquireData } from "../type/type";
+import type { SquireData } from "../../types";
 
 export class Squire extends Character {
   kissAssLevel;
