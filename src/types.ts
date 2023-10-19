@@ -17,7 +17,7 @@ export interface FighterData extends CharacterData {
   dexterity: number;
 }
 
-export interface AdviserData extends CharacterData {
+export interface AdvisorData extends CharacterData {
   adviseCharacter: Character;
 }
 

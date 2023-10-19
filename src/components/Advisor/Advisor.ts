@@ -1,10 +1,10 @@
 import Character from "../Character/Character";
-import type { AdviserData } from "../types";
+import type { AdvisorData } from "../../types";
 
 export class Adviser extends Character {
   adviseCharacter;
 
-  constructor(data: AdviserData) {
+  constructor(data: AdvisorData) {
     super(data);
     this.adviseCharacter = data.adviseCharacter;
   }
