@@ -1,36 +1,80 @@
+import type { CharacterData } from "../../types";
+import King from "../King/King";
 import Fighter from "../Fighter/Fighter";
-import { King } from "../King/King";
-import { type KingData } from "../../types";
-import { type FighterData } from "../../types";
+import Advisor from "../Advisor/Advisor";
+import Squire from "../Squire/Squire";
 
-const joffreyData: KingData = {
-  family: "Casa Baratheon de Desembarco",
-  age: 13,
-  img: "joffrey.jpg",
+const joffreyCharacterData: CharacterData = {
   name: "Joffrey",
-  yearsOfReign: 1,
+  family: "Baratheon",
+  age: 16,
+  imageSource: "joffrey.jpg",
 };
 
-const jaimeData: FighterData = {
+const jaimeCharacterData: CharacterData = {
   name: "Jaime",
   family: "Lannister",
-  age: 40,
-  img: "jaime.jpg",
-  dexterity: 7,
-  weapon: "sword",
+  age: 45,
+  imageSource: "jaime.jpg",
 };
 
-const daenerysData: FighterData = {
+const daenerysCharacterData: CharacterData = {
   name: "Daenerys",
-  age: 26,
-  family: "Casa Targaryen",
-  img: "daenerys.jpg",
-  dexterity: 9,
-  weapon: "spear",
+  family: "Targaryen",
+  age: 30,
+  imageSource: "daenerys.jpg",
 };
 
-const joffrey = new King(joffreyData);
-const jaime = new Fighter(jaimeData);
-const daenerys = new Fighter(daenerysData);
+const tyrionCharacterData: CharacterData = {
+  name: "Tyrion",
+  family: "Lannister",
+  age: 40,
+  imageSource: "tyrion.jpg",
+};
 
-export const characters = [joffrey, jaime, daenerys];
+const bronnCharacterData: CharacterData = {
+  name: "Bronn",
+  family: "Blackwater",
+  age: 54,
+  imageSource: "bronn.jpg",
+};
+
+const joffreyCharacterDataUpdate = {
+  ...joffreyCharacterData,
+  yearsOfReign: 2,
+};
+
+const daenerysCharacterDataUpdate = {
+  ...daenerysCharacterData,
+  weapon: "Dragons",
+  dexterity: 10,
+};
+
+const daenerys = new Fighter(daenerysCharacterDataUpdate);
+
+const tyrionCharacterDataUpdate = {
+  ...tyrionCharacterData,
+  adviseCharacter: daenerys,
+};
+
+const jaimeCharacterDataUpdate = {
+  ...jaimeCharacterData,
+  weapon: "sword",
+  dexterity: 7,
+};
+
+const jaime = new Fighter(jaimeCharacterDataUpdate);
+
+const bronnCharacterDataUpdate = {
+  ...bronnCharacterData,
+  serves: jaime,
+  kissAssLevel: 0,
+};
+
+const joffrey = new King(joffreyCharacterDataUpdate);
+
+const tyrion = new Advisor(tyrionCharacterDataUpdate);
+
+const bronn = new Squire(bronnCharacterDataUpdate);
+
+export const characters = [jaime, joffrey, daenerys, tyrion, bronn];

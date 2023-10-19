@@ -1,7 +1,7 @@
 import Character from "../Character/Character";
 import type { AdvisorData } from "../../types";
 
-class Adviser extends Character {
+class Advisor extends Character {
   adviseCharacter;
 
   constructor(data: AdvisorData) {
@@ -17,4 +17,4 @@ class Adviser extends Character {
   }
 }
 
-export default Adviser;
+export default Advisor;
